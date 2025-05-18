@@ -779,7 +779,7 @@ section,
 }
 
 .hero .btn-get-started {
-  background-color: var(--accent-color);
+  background-color:#3498db;
   color: var(--default-color);
   font-weight: 400;
   font-size: 13px;
@@ -793,7 +793,10 @@ section,
 }
 
 .hero .btn-get-started:hover {
-  background: color-mix(in srgb, var(--accent-color) 90%, white 15%);
+  background-color:#1073b5 ;
+   
+   
+
 }
 
 @media (max-width: 768px) {
@@ -1786,7 +1789,7 @@ form {
 .btn-upload {
   padding: 12px 40px;
   font-size: 1.2rem;
-  background-color: #f39c12;
+  background-color: #3498db;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -1795,7 +1798,7 @@ form {
 }
 
 .btn-upload:hover {
-  background-color: #e67e22;
+  background-color: #1073b5;
 }
 
 #book-upload:focus {
@@ -1828,8 +1831,8 @@ textarea:focus {
 .btn-get-started {
   padding: 12px 40px;
   font-size: 1.2rem;
-  background-color: #f39c12;
-  color: #fff;
+  background-color: #f3ce12;
+  color: #a43939;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -1837,5 +1840,146 @@ textarea:focus {
 }
 
 .btn-get-started:hover {
-  background-color: #e67e22;
+  background-color: #fa0e0e;
 }
+/* scnd page */
+.instruction-section {
+  height: 50vh; /* Half the screen height */
+  width: 100%;
+  background: linear-gradient(to right, #587cb3, #adcde8); /* Black to white shade */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.instruction-box {
+  
+  background-color: #9fbbd4;  
+  border-radius: 15px;
+  padding: 30px;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+#saqibb {
+  position: fixed;          
+  top: 70%;                 
+  left: 50%;                
+  transform: translate(-50%, -50%);   
+  background: #587cb3;         
+  color: white;             
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(14, 42, 108, 0.5);
+  width: 300px;             
+  text-align: center;
+  z-index: 1000;            
+}
+
+.instruction-text {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.generate-btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(27, 27, 28);
+  background-color:rgb(230, 230, 241);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.generate-btn:hover {
+  background-color:#adb5d1;
+}
+/* second page  */
+/* Reset margin/padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main full screen container */
+.main-container {
+  height: 100vh;
+  width: 100vw;
+  border: 2px solid rgba(0, 0, 0, 0.2); /* light black border */
+  background: linear-gradient(to bottom, #3498db, #ffffff); /* light blue to white */
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+/* Heading at top */
+.heading {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333;
+  text-align: center;
+}
+
+/* Container for top and bottom sections */
+.content-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+/* Top 80% section */
+.top-section {
+  flex: 8;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  border-color: #a19f9f;
+  border-style: solid;
+  border-width: 0.5px;
+}
+
+/* Generate Button at bottom-right of top-section */
+.generate-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.generate-btn:hover {
+  background-color:#3498db;
+  /* color: #3498db; */
+}
+
+/* Bottom 20% section */
+.bottom-section {
+  flex: 2;
+  background-color: #f5faff;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.05);
+  border-color: #a19f9f;
+  /* border-style: solid; */
+  border-width: 0.5px;
+  
+}
+
+
+
+
+
+
