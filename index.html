@@ -77,8 +77,27 @@
 
         <!-- File Upload Section -->
         <form id="upload-form" action="/upload" method="POST" enctype="multipart/form-data">
-          <label for="book-upload" class="btn-upload">Choose Book</label>
-          <input type="file" name="book-upload" id="book-upload" accept=".txt,.pdf,.docx">
+          <!-- Button + Language Dropdown -->
+          <div class="upload-row">
+            <label for="book-upload" class="btn-upload">Choose Book</label>
+            <input type="file" name="book-upload" id="book-upload" accept=".txt,.pdf,.docx">
+
+            <!-- Language Dropdown Start -->
+            <div class="language-selector">
+              <button type="button" id="dropdownBtn">🌐 Language ▾</button>
+              <div id="languageList" class="dropdown-content">
+                <div class="lang-option">English</div>
+                <div class="lang-option">Urdu</div>
+                <div class="lang-option">Arabic</div>
+                <div class="lang-option">Hindi</div>
+                <div class="lang-option">Spanish</div>
+                <div class="lang-option">Chinese</div>
+                <div class="lang-option">French</div>
+              </div>
+            </div>
+            <!-- Language Dropdown End -->
+          </div>
+
           <br>
           <span id="file-name">Nothing is selected, type something...</span>
           <br>
@@ -97,6 +116,32 @@
     </div>
   </div>
 </section>
+<!-- javascript of dropdown -->
+<script>
+  const dropdownBtn = document.getElementById("dropdownBtn");
+  const languageList = document.getElementById("languageList");
+
+  dropdownBtn.addEventListener("click", () => {
+    languageList.style.display = languageList.style.display === "block" ? "none" : "block";
+  });
+
+  const langOptions = document.querySelectorAll(".lang-option");
+  langOptions.forEach(option => {
+    option.addEventListener("click", () => {
+      alert(`You selected: ${option.innerText}`);
+      languageList.style.display = "none";
+    });
+  });
+
+  // Close dropdown when clicking outside
+  window.addEventListener("click", function (e) {
+    if (!dropdownBtn.contains(e.target) && !languageList.contains(e.target)) {
+      languageList.style.display = "none";
+    }
+  });
+</script>
+
+
 
 <!-- JavaScript to handle form submission behavior -->
 <script>

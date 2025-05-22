@@ -4,27 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Next Page</title>
-    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/css/main.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-    <div class="main-container">
+<div class="main-container">
     <h2 class="heading">🛠️ Check your content. If everything looks good, click the button below to generate the audio.</h2>
 
     <div class="content-container">
-      
-      <div class="top-section">
-        <button class="generate-btn">Generate Audio</button>
-      </div>
+        <div class="top-section">
+            <button class="generate-btn">Generate Audio</button>
+        </div>
 
-      <div class="bottom-section">
-        <!-- You can put something here later -->
-      </div>
+        <div class="bottom-section">
+            <!-- Audio Combiner starts -->
+            <h2>🎧 Upload and Combine Audio Files</h2>
+            <form method="POST" action="/combine" enctype="multipart/form-data">
+                <input type="file" name="audio_files" multiple required>
+                <button type="submit">Combine Audio</button>
+            </form>
 
+            {% if combined_audio %}
+                <h3>✅ Combined Audio</h3>
+                <audio controls>
+                    <source src="{{ url_for('static', filename='combined_audio/' + combined_audio) }}" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <br>
+                <a href="{{ url_for('download_file', filename=combined_audio) }}">Download Combined Audio</a>
+            {% endif %}
+            <!-- Audio Combiner ends -->
+        </div>
     </div>
-  </div>
-
-
+</div>
 
 </body>
 </html>
