@@ -1348,7 +1348,7 @@ section,
 # Contact Section
 --------------------------------------------------------------*/
 .contact {
-  background-image: url("../img/contact-bg.png");
+  /* background-image: url(""); */
   background-position: left center;
   background-repeat: no-repeat;
   position: relative;
@@ -1755,9 +1755,7 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
+
 #hero {
   position: relative;
   background-color: #1e1e1e;

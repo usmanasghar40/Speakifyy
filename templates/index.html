@@ -18,14 +18,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> -->
 
   <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <!-- <link href="/assets/css/main.css" rel="stylesheet"> -->
+   <!-- <link rel="stylesheet" href="/assets/css/main.css"> -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/vendor/aos/aos.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.css') }}">
 
   
 </head>
@@ -67,7 +73,7 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
-  <img src="assets/img/header.jpg" alt="" data-aos="fade-in">
+  <img src="{{ url_for('static', filename='assets/img/header.jpg') }}" alt="" data-aos="fade-in">
 
   <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
     <div class="row justify-content-center">
@@ -78,12 +84,12 @@
         <!-- File Upload Section -->
         <form id="upload-form" action="/upload" method="POST" enctype="multipart/form-data">
           <!-- Button + Language Dropdown -->
-          <div class="upload-row">
+          <!-- <div class="upload-row">
             <label for="book-upload" class="btn-upload">Choose Book</label>
-            <input type="file" name="book-upload" id="book-upload" accept=".txt,.pdf,.docx">
+            <input type="file" name="book-upload" id="book-upload" accept=".txt,.pdf,.docx"> -->
 
             <!-- Language Dropdown Start -->
-            <div class="language-selector">
+            <!-- <div class="language-selector">
               <button type="button" id="dropdownBtn">🌐 Language ▾</button>
               <div id="languageList" class="dropdown-content">
                 <div class="lang-option">English</div>
@@ -94,13 +100,13 @@
                 <div class="lang-option">Chinese</div>
                 <div class="lang-option">French</div>
               </div>
-            </div>
+            </div> -->
             <!-- Language Dropdown End -->
-          </div>
+          <!-- </div> -->
 
-          <br>
+          <!-- <br>
           <span id="file-name">Nothing is selected, type something...</span>
-          <br>
+          <br> -->
 
           <!-- Text Box for Manual Input -->
           <textarea id="text-input" name="text-input" placeholder="Or type your text here..." rows="1" class="input-box"></textarea>
@@ -111,7 +117,8 @@
         </form>
 
         <!-- Hidden Audio Player -->
-        <audio id="audio-player" src="assets/audio/sample.mp3" controls style="display: none; margin-top: 20px;"></audio>
+        <audio id="audio-player" src="{{ url_for('static', filename='assets/audio/sample.mp3') }}" controls style="display: none; margin-top: 20px;"></audio>
+        
       </div>
     </div>
   </div>
@@ -412,7 +419,18 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+  <script src="{{ url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/php-email-form/validate.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/aos/aos.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/waypoints/noframework.waypoints.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+
+  <!-- <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
@@ -420,10 +438,11 @@
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script> -->
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <!-- <script src="assets/js/main.js"></script> -->
+  <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
 
 </body>
 
